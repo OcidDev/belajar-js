@@ -6,8 +6,13 @@
     <title>Belajar JS</title>
 </head>
 <body>
-    <h2>What Can JavaScript Do?</h2>
-    <p id="demo">JavaScript can Change HTML content.</p>
-    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+    <h2>JavaScript if</h2>
+    <p id="demo">Good Morning</p>
+    
+    <script>
+        if(new Date().getHours() > 18){
+            document.getElementById("demo").innerHTML = "Good night";
+        }
+    </script>
 </body>
 </html>
