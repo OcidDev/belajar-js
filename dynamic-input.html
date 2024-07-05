@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Input Form</title>
+    <link rel="stylesheet"  crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <!-- place navbar here -->
+    </header>
+
+    <main>
+        <div class="container">
+            <form id="dynamicForm">
+                <div class="mb-3">
+                    <label for="name1" class="form-label">Name</label>
+                    <input type="text" name="name[]" id="name1" class="form-control" placeholder="Enter name" aria-describedby="helpId">
+                </div>
+                <button type="button" id="addInput" class="btn btn-primary">Add More</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('addInput').addEventListener('click', function() {
+            const form = document.getElementById('dynamicForm');
+            const newInput = document.createElement('div');
+            newInput.classList.add('mb-3');
+            newInput.innerHTML = `
+                <label for="" class="form-label">Name</label>
+                <input type="text" name="name[]" class="form-control" placeholder="Enter name" aria-describedby="helpId">
+            `;
+            form.insertBefore(newInput, this);
+        });
+    </script>
+</body>
+</html>
